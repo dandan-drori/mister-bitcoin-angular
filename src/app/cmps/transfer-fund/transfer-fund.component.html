@@ -1,0 +1,8 @@
+<section class="transfer-fund">
+  <h2 *ngIf="contact">Transfer coins to {{ contact.name }}</h2>
+  <label>
+    Amount:
+    <input type="text" [(ngModel)]="amount" />
+  </label>
+  <button (click)="onTransferMoney()">Transfer</button>
+</section>

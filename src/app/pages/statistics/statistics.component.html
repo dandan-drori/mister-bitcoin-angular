@@ -1,0 +1,19 @@
+<section class="statistics">
+  <google-chart
+    [data]="dailyPrice"
+    [type]="type"
+    [title]="titleDailyPrice"
+    [width]="width"
+    [height]="height"
+  >
+  </google-chart>
+  <google-chart
+    [data]="transactions"
+    [type]="type"
+    [title]="titleTransactions"
+    [width]="width"
+    [height]="height"
+    [options]="myOptions"
+  >
+  </google-chart>
+</section>

@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+$break-mobile: 450px;
+$break-narrow: 760px;
+$break-normal: 960px;
+$break-wide: 1200px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+img {
+  width: 100%;
+  object-fit: contain;
+}
+
+h2 {
+  letter-spacing: 0.8px;
+}
+
+h4 {
+  letter-spacing: 0.3px;
+}
+
+p,
+span {
+  letter-spacing: 0.4px;
+}
+
+ul {
+  list-style: none;
+}
+
+.chart {
+  circle {
+    fill: none !important;
+  }
+}
+
+.simple-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
+}
+
+.simple-card-preview {
+  padding: 10px;
+  box-shadow: 0 0 4px 1px #0000003b;
+  cursor: pointer;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
+.icon-lg {
+  width: 100px;
+  height: 100px;
+}
+
+@mixin for-mobile-layout {
+  @media (max-width: $break-mobile) {
+    @content;
+  }
+}
+
+@mixin for-narrow-layout {
+  @media (max-width: $break-narrow) {
+    @content;
+  }
+}
+
+@mixin for-normal-layout {
+  @media (max-width: $break-normal) {
+    @content;
+  }
+}
+
+@mixin for-wide-layout {
+  @media (min-width: $break-wide) {
+    @content;
+  }
+}
+
+@mixin layout-columns($padding: 40px, $Width: 960px) {
+  grid-template-columns:
+    minmax(20px, $padding)
+    minmax(auto, $Width)
+    minmax(20px, $padding);
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+  grid-auto-flow: dense;
+
+  > * {
+    grid-column: 2;
+  }
+
+  > .full {
+    grid-column: 1 / -1;
+  }
+
+  @include for-mobile-layout {
+    @include layout-columns(20px, $break-mobile);
+  }
+
+  @include for-narrow-layout {
+    @include layout-columns(1fr, $break-narrow);
+  }
+
+  @include for-normal-layout {
+    @include layout-columns(200px, $break-normal);
+  }
+
+  @include for-wide-layout {
+    @include layout-columns(400px, $break-wide);
+  }
+}

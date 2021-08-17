@@ -1,0 +1,17 @@
+<section class="contact-details-container">
+  <section class="contact-details">
+    <section class="links">
+      <a [routerLink]="'/contact/edit/' + contact._id">Edit</a>
+    </section>
+    <img [src]="'https://robohash.org/' + contact._id" alt="contact" />
+    <p>Name: {{ contact.name }}</p>
+    <p>Phone: {{ contact.phone }}</p>
+    <p>Email: {{ contact.email }}</p>
+    <app-transfer-fund [contact]="contact"></app-transfer-fund>
+    <app-moves-list
+      [title]="'Your Moves:'"
+      *ngIf="user"
+      [moves]="getMovesToContact()"
+    ></app-moves-list>
+  </section>
+</section>

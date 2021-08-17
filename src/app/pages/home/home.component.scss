@@ -1,0 +1,32 @@
+.home {
+  padding-top: 40px;
+
+  .card {
+    border: 2px solid #000;
+    width: 450px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+
+    img {
+      width: 200px;
+    }
+
+    p {
+      margin-bottom: 5px;
+
+      &:not(:nth-of-type(1)) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .icon-home {
+    width: 30px;
+    height: 30px;
+  }
+}
