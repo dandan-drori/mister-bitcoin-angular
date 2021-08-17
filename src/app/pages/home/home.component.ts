@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { User } from './../../services/user.model';
 import { BitcoinService } from './../../services/bitcoin.service';
 import { UserService } from './../../services/user.service';
@@ -17,11 +18,17 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private bitcoinService: BitcoinService
+    private bitcoinService: BitcoinService,
+    private router: Router
   ) {}
 
   getRecentMoves() {
     return this.user.moves.slice(0, 3);
+  }
+
+  onLogout() {
+    localStorage.clear();
+    this.router.navigateByUrl('/signup');
   }
 
   async ngOnInit(): Promise<void> {

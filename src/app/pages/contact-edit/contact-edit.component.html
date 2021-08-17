@@ -1,7 +1,11 @@
 <section class="contact-edit">
   <section class="actions" *ngIf="contact">
-    <a [routerLink]="'/contact/' + contact._id">Back</a>
-    <button (click)="onRemoveContact()">Delete</button>
+    <a [routerLink]="'/contact/' + contact._id">
+      <img src="./assets/icons/back.png" alt="back" />
+    </a>
+    <button (click)="onRemoveContact()">
+      <img src="./assets/icons/delete.png" alt="delete" />
+    </button>
   </section>
   <section class="flex-container" *ngIf="contact">
     <img [src]="'https://robohash.org/' + contact._id" alt="" />

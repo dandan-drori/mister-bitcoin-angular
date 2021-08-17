@@ -1,10 +1,19 @@
 <section class="home">
-  <h2>Mister Bitcoin</h2>
+  <section class="flex-container">
+    <h2>Mr. Bitcoin</h2>
+    <button (click)="onLogout()">Logout</button>
+  </section>
   <section class="card">
     <img [src]="'https://robohash.org/' + user.name" alt="" />
-    <p>Name: {{ user.name }}</p>
-    <p>Coins: {{ user.coins }}</p>
-    <p>Rate: {{ rate }}</p>
+    <p>Hello {{ user.name }}!</p>
+    <p>
+      <img src="./assets/icons/coins.png" alt="coins" class="icon-home" />
+      Coins: {{ user.coins }}
+    </p>
+    <p>
+      <img src="./assets/icons/bitcoin.png" alt="bitcoin" class="icon-home" />
+      Rate: {{ rate }}
+    </p>
   </section>
   <app-moves-list *ngIf="user" [moves]="getRecentMoves()"></app-moves-list>
 </section>

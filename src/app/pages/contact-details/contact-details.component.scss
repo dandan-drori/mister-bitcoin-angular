@@ -3,6 +3,7 @@
   .links {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 
     img {
       width: 40px;
@@ -13,7 +14,7 @@
   .contact-details {
     place-items: center;
 
-    img {
+    & > img {
       width: 130px;
       height: 130px;
       margin-bottom: 10px;

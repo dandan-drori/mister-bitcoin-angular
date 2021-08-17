@@ -1,7 +1,12 @@
 <section class="contact-details-container">
-  <section class="contact-details">
+  <section class="contact-details main-layout">
     <section class="links">
-      <a [routerLink]="'/contact/edit/' + contact._id">Edit</a>
+      <a routerLink="/contact">
+        <img src="./assets/icons/back.png" alt="back" />
+      </a>
+      <a [routerLink]="'/contact/edit/' + contact._id">
+        <img src="./assets/icons/edit.png" alt="edit" />
+      </a>
     </section>
     <img [src]="'https://robohash.org/' + contact._id" alt="contact" />
     <p>Name: {{ contact.name }}</p>
