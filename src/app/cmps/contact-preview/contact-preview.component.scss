@@ -1,7 +1,12 @@
 .contact-preview {
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
+  width: fit-content;
+  padding-right: 30px;
+  border-radius: 7px;
+  margin-bottom: 10px;
 
   &:hover {
     background-color: #cccccccc;
